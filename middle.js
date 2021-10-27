@@ -26,19 +26,24 @@ const assertArraysEqual = function(assertArrOne, assertArrTwo) {
 // assertArraysEqual(['hello', 'world'], ['hello', 'world'])
 //END OF TEST CODE
 
-const without = function(words, remove) {
-  const withoutArray = words.slice();
-  for (let i = 0; i < withoutArray.length; i++) {
-    if (withoutArray[i] === remove[0]) {
-      withoutArray.shift(i);
-      i--;
+const middle = function(arr) {
+  const arrCopy = arr.slice();
+  if (arrCopy.length < 3) {
+    return [];
+  } else {
+    const middle = Math.floor(arrCopy.length / 2);
+    // console.log(middle)
+    if (arrCopy.length % 2 === 0) {
+      console.log(arrCopy.slice(middle - 1, middle + 1));
+    } else {
+      console.log(arrCopy.slice(middle, middle + 1));
     }
   }
-  console.log(withoutArray);
 };
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
-
+const testOne = [1,2,3,4,5,6];
+const testTwo = [1,2,3,4,5];
+middle(testOne);
+middle(testTwo);
+assertArraysEqual(testOne, [1,2,3,4,5,6]);
+assertArraysEqual(testTwo, [1,2,3,4,5]);

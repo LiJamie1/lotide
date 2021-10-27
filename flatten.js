@@ -34,19 +34,19 @@ const assertArraysEqual = function(assertArrOne, assertArrTwo) {
 // }
 
 const flatten = function(target) {
-  let arr = target.slice()
-  let flatArr = []
-  for (let i = 0; i < arr.length; i++){
-    if (Array.isArray(arr[i])){
-      const result = flatten(arr[i])
-      flatArr = flatArr.concat(result)
+  let arr = target.slice();
+  let flatArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      const result = flatten(arr[i]);
+      flatArr = flatArr.concat(result);
     } else {
-      flatArr.push(arr[i])
+      flatArr.push(arr[i]);
     }
   }
-  return flatArr
-}
+  return flatArr;
+};
 
 // TEST CODE
-const target = [1,2,3,[4,5],[6,[7]]]
-console.log(flatten(target))
+const target = [1,2,3,[4,5],[6,[7]]];
+console.log(flatten(target));
