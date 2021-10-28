@@ -1,10 +1,10 @@
 const assertEqual = function(actual, expected) {
   if (actual !== expected) {
     return `Assertion Failed`;
-  } else {
-    return `Assertion Passed`;
   }
+  return `Assertion Passed`;
 };
+
 //END ASSERTEQUAL
 
 const countLetters = function(str) {

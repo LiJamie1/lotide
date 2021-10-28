@@ -1,10 +1,10 @@
 const assertEqual = function(actual, expected) {
   if (actual !== expected) {
-    return `🛑Assertion Failed: ${actual} !== ${expected}`;
-  } else {
-    return `✅Assertion Passed: ${actual} === ${expected}`;
+    return `Assertion Failed`;
   }
+  return `Assertion Passed`;
 };
+
 
 const tail = function(arr) {
   return arr.slice(1);

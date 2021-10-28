@@ -1,22 +1,20 @@
 const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
-  } else {
-    for (let i = 0; i < arrayOne.length; i++) {
-      if (arrayOne[i] !== arrayTwo[i]) {
-        return false;
-      }
-    }
-    return true;
   }
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) {
+      return false;
+    }
+  }
+  return true;
 };
 
 const assertArraysEqual = function(assertArrOne, assertArrTwo) {
   if (eqArrays(assertArrOne, assertArrTwo)) {
-    console.log('Assertion Passed');
-  } else {
-    console.log('Assertion Failed');
+    return 'Assertion Passed';
   }
+return 'Assertion Failed';
 };
 
 // //TEST CODE
