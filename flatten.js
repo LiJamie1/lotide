@@ -38,9 +38,8 @@ const flatten = function(target) {
     if (Array.isArray(arr[i])) {
       const result = flatten(arr[i]);
       flatArr = flatArr.concat(result);
-    } else {
-      flatArr.push(arr[i]);
     }
+    flatArr.push(arr[i]);
   }
   return flatArr;
 };
@@ -48,3 +47,5 @@ const flatten = function(target) {
 // TEST CODE
 const target = [1,2,3,[4,5],[6,[7]]];
 console.log(flatten(target));
+
+module.exports = flatten;

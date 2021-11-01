@@ -37,7 +37,7 @@ const eqObjects = function(o1, o2) {
   return true;
 };
 
-// TEST CODE
+// // TEST CODE
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 // console.log(eqObjects(ab, ba))
@@ -54,3 +54,4 @@ console.log(assertEqual(eqObjects(cd, dc), true))
 const cd2 = { c: "1", d: ["2", 3, 4] };
 eqObjects(cd, cd2); // => false
 console.log(assertEqual(eqObjects(cd, cd2), true))
+
