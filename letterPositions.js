@@ -14,7 +14,7 @@ const assertArraysEqual = function(assertArrOne, assertArrTwo) {
   if (eqArrays(assertArrOne, assertArrTwo)) {
     return 'Assertion Passed';
   }
-return 'Assertion Failed';
+  return 'Assertion Failed';
 };
 //END ASSERTARRAYSEQUAL
 

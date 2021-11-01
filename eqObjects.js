@@ -10,34 +10,34 @@ const assertEqual = function(actual, expected) {
 const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
-  } 
+  }
   for (let i = 0; i < arrayOne.length; i++) {
     if (arrayOne[i] !== arrayTwo[i]) {
       return false;
-     }
+    }
   }
   return true;
 };
 
 // eqObjects Function
 const eqObjects = function(o1, o2) {
-  if(Object.keys(o1).length !== Object.keys(o2).length) {
+  if (Object.keys(o1).length !== Object.keys(o2).length) {
     return false;
   }
   for (const key in o1) {
     if ((Array.isArray(o1[key]))) {
       if (!(eqArrays(o1[key], o2[key]))) {
         return false;
-      };
-    };
+      }
+    }
     if (typeof o1[key] === 'object' && o1[key] !== null) {
       if (!eqObjects(o1[key], o2[key])) {
         return false;
       }
-    } else if (o1[key] !== o2[key]){
+    } else if (o1[key] !== o2[key]) {
       return false;
-    };
-  };
+    }
+  }
   return true;
 };
 
@@ -66,6 +66,6 @@ const eqObjects = function(o1, o2) {
 // console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => true
 // console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => false
 // console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })) // => false
-console.log(assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true)) // => true
-console.log(assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false)) // => false
-console.log(assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false)) // => false
+console.log(assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true)); // => true
+console.log(assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false)); // => false
+console.log(assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false)); // => false
