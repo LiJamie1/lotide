@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@fairlydecent/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "an collection of functions built based on lodash through week 1 and 2 of lighthouse labs web dev boot camp",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/QuiteAverage/lotide.git"
   },
-  "author": "",
+  "author": "Jamie Li",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/QuiteAverage/lotide/issues"
