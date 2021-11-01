@@ -1,7 +1,17 @@
-// const test = "hello this is test a string";
-// const result = countLetters(test);
-// //TEST
-// console.log(assertEqual(result["i"], 3));
-// console.log(assertEqual(result["h"], 2));
-// console.log(assertEqual(result["t"], 4));
-// console.log(assertEqual(result["e"], 2));
+const chai = require('chai');
+const assert = chai.assert;
+const lotide = require('../index');
+
+describe('#countLetters', function() {
+  it('should return an object of a letter count of a given string, eqObjects should return true if result and expected are equal', function() {
+    const string = 'hello';
+    const result = lotide.countLetters(string);
+    const expected = {
+      h: 1,
+      e: 1,
+      l: 2,
+      o: 1
+    };
+    assert.isTrue(lotide.eqObjects(result, expected))
+  });
+});

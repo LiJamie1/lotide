@@ -1,13 +1,14 @@
 const without = function(words, remove) {
   const withoutArray = words.slice();
-  for (let i = 0; i < withoutArray.length; i++) {
-    if (withoutArray[i] === remove[0]) {
-      withoutArray.shift(i);
-      i--;
-    }
+  const index = withoutArray.indexOf(remove[0])
+  if(index > -1){
+    withoutArray.splice(index, 1)
   }
-  console.log(withoutArray);
+  return withoutArray;
 };
 
+const words = ["hello", "world", "lighthouse"];
+const target = ['lighthouse'];
+console.log(without(words, target))
 module.exports = without;
 

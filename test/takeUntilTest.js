@@ -1,15 +1,12 @@
-//TEST CODE
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const data3 = [1,2,3,4,5];
-const results1 = takeUntil(data1, x => x < 0);
-const results2 = takeUntil(data2, x => x === ',');
-const results3 = takeUntil(data3, x => x < 0);
+const chai = require('chai');
+const assert = chai.assert;
+const lotide = require('../index');
 
-// console.log(results1);
-// console.log(results2);
-// console.log(results3);
-
-console.log(assertArraysEqual(results1, [1,2,5,7,2]));
-console.log(assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]));
-console.log(assertArraysEqual(results3, [1,2,3,4,5]));
+describe('#takeUntil', function() {
+  it('should return an array of items from an array until a condition is fulfilled', function() {
+    const testOne = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+    const expected = [1,2,5,7,2];
+    const result = lotide.takeUntil(testOne, x => x < 0);
+    assert.isTrue(lotide.eqArrays(result, expected));
+  });
+});

@@ -1,20 +1,19 @@
-const assert = require('chai').assert;
-const tail = require('../tail.js');
-const assertEqual = require('../assertEqual.js')
-const assertArraysEqual = require('../assertArraysEqual')
+const chai = require('chai');
+const assert = chai.assert;
+const lotide = require('../index');
 
 
 describe('#tail', function() {
   it("should return assertion passed if tail input is [1,2,3] returns [2,3]", function() {
     const testOne = [1,2,3];
-    const result = tail(testOne);
+    const result = lotide.tail(testOne);
     const expected = [2,3];
-    assert.strictEqual(assertArraysEqual(result, expected), 'Assertion Passed')
+    assert.strictEqual(lotide.assertArraysEqual(result, expected), 'Assertion Passed')
   });
   it("should return assertion passed if tail input is ['Hello', 'World'] returns ['World']", function() {
     const testTwo = ['Hello', 'World'];
-    const result = tail(testTwo);
+    const result = lotide.tail(testTwo);
     const expected = ['World'];
-    assert.strictEqual(assertArraysEqual(result, expected), 'Assertion Passed')
+    assert.strictEqual(lotide.assertArraysEqual(result, expected), 'Assertion Passed')
   });
 });

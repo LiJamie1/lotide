@@ -1,18 +1,20 @@
-const allItems = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
+const chai = require('chai');
+const assert = chai.assert;
+const lotide = require('../index');
 
-const result1 = countOnly(allItems, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-
-console.log(assertEqual(result1["Jason"], 1));
-console.log(assertEqual(result1["Karima"], undefined));
-console.log(assertEqual(result1["Fang"], 2));
-console.log(assertEqual(result1["Agouhanna"], undefined));
+describe('#countOnly', function() {
+  it('should return an object with a count of specified items from an input array', function() {
+    const testOne = ['a', 'a', 'b', 'c'];
+    const filter = {
+      'a': true,
+      'b': false,
+      'c': true
+    };
+    const expected = {
+      a: 2,
+      c: 1
+    };
+    const result = lotide.countOnly(testOne, filter);
+    assert.isTrue(lotide.eqObjects(result, expected));
+  });
+});
