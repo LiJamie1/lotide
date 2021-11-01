@@ -12,6 +12,6 @@ describe('#countLetters', function() {
       l: 2,
       o: 1
     };
-    assert.isTrue(lotide.eqObjects(result, expected))
+    assert.isTrue(lotide.eqObjects(result, expected));
   });
 });

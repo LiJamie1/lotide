@@ -12,7 +12,7 @@ describe('#letterPositions', function() {
       o: [4]
     };
     const result = lotide.letterPositions(test);
-    assert.isTrue(lotide.eqObjects(result, expected))
+    assert.isTrue(lotide.eqObjects(result, expected));
   });
 });
 

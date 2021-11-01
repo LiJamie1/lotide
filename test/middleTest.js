@@ -21,4 +21,4 @@ describe('#middle', function() {
     const result = lotide.middle(testThree);
     assert.strictEqual(lotide.assertArraysEqual(result, midVal), 'Assertion Failed');
   });
-})
+});
